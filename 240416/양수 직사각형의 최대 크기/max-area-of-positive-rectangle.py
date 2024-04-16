@@ -9,7 +9,7 @@ def is_all_positive(x1, y1, x2, y2):
     return True
 
 
-max_size = 0
+max_size = -1
 for i in range(n):
     for j in range(m):
         for k in range(i,n):
