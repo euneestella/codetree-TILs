@@ -1,12 +1,26 @@
 n = int(input())
 blocks = [int(input()) for _ in range(n)]
+end_of_array = n
 
-s1, e1 = map(int, input().split()) # 위에서 s1번째부터 e1번째까지 블럭을 제거
-s2, e2 = map(int, input().split()) # 동일
 
-blocks = blocks[:s1-1] + blocks[e1:]
-blocks = blocks[:s2-1] + blocks[e2:]
+def cut_array(start_idx, end_idx):
+    global end_of_array, blocks
 
-print(len(blocks))
-for block in blocks:
-    print(block)
+    temp_arr = []
+
+    for i in range(end_of_array):
+        if i < start_idx or i > end_idx:
+            temp_arr.append(blocks[i])
+    
+    end_of_array = len(temp_arr)
+    for i in range(end_of_array):
+        blocks[i] = temp_arr[i]
+    
+
+for _ in range(2):
+    s, e = tuple(map(int, input().split()))
+    cut_array(s - 1, e - 1)
+
+print(end_of_array)
+for i in range(end_of_array):
+    print(blocks[i])
