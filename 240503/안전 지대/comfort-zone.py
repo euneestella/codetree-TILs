@@ -1,3 +1,6 @@
+import sys 
+sys.setrecursionlimit(10**9)
+
 n, m = map(int, input().split())
 
 area_size = 0
