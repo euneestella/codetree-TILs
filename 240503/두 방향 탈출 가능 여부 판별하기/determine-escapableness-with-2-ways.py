@@ -1,6 +1,6 @@
 n, m = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(n)]
-visited = [[False for _ in range(n)] for _ in range(m)]
+visited = [[False for _ in range(m)] for _ in range(n)]
 
 def dfs(vertex):
     cur_x, cur_y = vertex
